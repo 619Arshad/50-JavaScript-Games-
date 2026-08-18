@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Series</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+
+    <!-- FULL SETUP: naye players ke liye - naam + match count -->
+    <div id="setup" class="card">
+        <button class="closeBtn" id="closeBtn1" title="Game band karein">&times;</button>
+        <div class="inputGroup">
+            <label for="player1">Player 1 (X) ka naam:</label>
+            <input type="text" id="player1" placeholder="e.g. Ali">
+        </div>
+        <div class="inputGroup">
+            <label for="player2">Player 2 (O) ka naam:</label>
+            <input type="text" id="player2" placeholder="e.g. Sara">
+        </div>
+        <div class="inputGroup">
+            <label for="matchCount">Series kitne matches ki?</label>
+            <select id="matchCount">
+                <option value="3">Best of 3</option>
+                <option value="5">Best of 5</option>
+                <option value="7">Best of 7</option>
+                <option value="10">Best of 10</option>
+            </select>
+        </div>
+        <button id="startBtn">Start Series</button>
+    </div>
+
+    <!-- QUICK SETUP: purane players ke sath - sirf match count -->
+    <div id="quickSetup" class="card hidden">
+        <button class="closeBtn" id="closeBtn2" title="Game band karein">&times;</button>
+        <p id="quickSetupHeading"></p>
+        <div class="inputGroup">
+            <label for="matchCount2">Series kitne matches ki?</label>
+            <select id="matchCount2">
+                <option value="3">Best of 3</option>
+                <option value="5">Best of 5</option>
+                <option value="7">Best of 7</option>
+                <option value="10">Best of 10</option>
+            </select>
+        </div>
+        <button id="startAgainBtn">Start New Series</button>
+    </div>
+
+    <!-- CLOSED SCREEN: jab user game band kar de -->
+    <div id="closedScreen" class="card hidden">
+        <p id="closedScreenText">Game band ho gaya hai.</p>
+        <button id="reopenBtn">Game Dobara Kholein</button>
+    </div>
+
+    <!-- GAME AREA -->
+    <div id="game" class="hidden">
+        <div id="scoreboard"></div>
+        <div id="matchInfo"></div>
+        <div id="status">Turn: X</div>
+        <div class="board" id="board"></div>
+        <button id="nextMatchBtn" class="hidden">Next Match</button>
+    </div>
+
+    <!-- SERIES END DIALOG -->
+    <div id="seriesModal" class="modalOverlay hidden">
+        <div class="modalBox">
+            <button class="closeBtn" id="closeBtn3" title="Game band karein">&times;</button>
+            <p id="seriesResultText"></p>
+            <div class="modalButtons">
+                <button id="playAgainBtn">Same Players - New Series</button>
+                <button id="newPlayersBtn">New Players</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
